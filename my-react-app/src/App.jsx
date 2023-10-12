@@ -1,7 +1,6 @@
 import './App.css'
-import PokemonList from './components/PokemonCard';
 import PokemonCard from './components/PokemonCard';
-import PropTypes from 'prop-types';
+
 
 function App() {
   const pokemonList = [
@@ -14,10 +13,10 @@ function App() {
         name: "mew",
     },
     ]; 
-    const pokemon = PokemonList[0] 
+    const pokemon = pokemonList[0] 
   return (
     <>
-      <PokemonCard />
+      <PokemonCard pokemon={pokemon}/>
     </>
   )
 }

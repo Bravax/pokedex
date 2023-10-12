@@ -1,8 +1,7 @@
-function PokemonCard(props) {
-    console.log(props)
+import PropTypes from "prop-types";
+
+function PokemonCard({pokemon}) {
     
-    const pokemon = pokemonList [0]
-    console.log(pokemon)
    return (
        <>
        {pokemon.name}
@@ -10,6 +9,11 @@ function PokemonCard(props) {
        </>  
       );
     }
-    
+    PokemonCard.propTypes = {
+        pokemon:PropTypes.shape ({
+          name: PropTypes.string.isRequired, 
+          imgSrc: PropTypes.string,})      
+        }
+      
 
 export default PokemonCard;
