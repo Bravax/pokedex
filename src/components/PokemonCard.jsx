@@ -7,7 +7,7 @@ function PokemonCard({pokemon}) {
        {pokemon.imgSrc ? (
        <img src = {pokemon.imgSrc} alt= {pokemon.name} /> 
        ):( 
-       <p>Elle est ou là ma photo?? L est ou hein??  😡😡</p>)}
+       <p>Elle est ou là ma photo?? Elle est ou hein??  😡😡</p>)}
        </>  
       );
     }
