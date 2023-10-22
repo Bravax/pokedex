@@ -1,26 +1,51 @@
-import './App.css'
-import PokemonCard from './components/PokemonCard';
-
+import React, { useState } from "react";
+import "./App.css";
+import NavBar from "./components/NavBar";
+import PokemonCard from "./components/PokemonCard";
 
 function App() {
   const pokemonList = [
     {
-        name: "bulbasaur",
-        imgSrc:
+      name: "bulbasaur",
+      imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
     },
     {
-        name: "mew",
+      name: "charmander",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
     },
-    ]; 
-    const pokemon = pokemonList[0] 
+    {
+      name: "squirtle",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+    },
+    {
+      name: "pikachu",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+    },
+    {
+      name: "mew",
+    },
+  ];
+
+  const [selectedPokemon, setSelectedPokemon] = useState(pokemonList[0]);
+
+  const handlePokemonClick = (pokemon) => {
+    setSelectedPokemon(pokemon);
+  };
+
   return (
-    <>
-      <PokemonCard pokemon={pokemon}/>
-    </>
-  )
+    <div>
+      <NavBar
+        pokemonList={pokemonList}
+        onPokemonClick={handlePokemonClick}
+        selectedPokemon={selectedPokemon}
+      />
+      <PokemonCard pokemon={selectedPokemon} />
+    </div>
+  );
 }
 
-
-console.log()
-export default App
+export default App;
