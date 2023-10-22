@@ -1,3 +1,3 @@
 # pokedex
 
-Quest 7
+Finished quest 8
